@@ -25,14 +25,22 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   };
 };
 
-async function publishPost(id: number): Promise<void> {
-  await fetch(`http://localhost:3000/api/publish/${id}`, {
+// async function publishPost(id: any) {
+//   await fetch(`http://localhost:3000/api/publish/${id}`, {
+//     method: "PUT",
+//   });
+//   await Router.push("/");
+// }
+async function publishPost(id: any) {
+  await fetch(`https://next-prisma-tomo.vercel.app/api/publish/${id}`, {
     method: "PUT",
   });
   await Router.push("/");
 }
 
-async function deletePost(id: number): Promise<void> {
+// https://next-prisma-tomo.vercel.app/p/3
+
+async function deletePost(id: number) {
   await fetch(`http://localhost:3000/api/post/${id}`, {
     method: "DELETE",
   });
